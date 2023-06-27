@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.sample.myapp.databinding.FragmentListBinding
 import com.sample.myapp.remote.ApiDetails
-import com.sample.myapp.remote.URLhaus
+import com.sample.myapp.remote.URLhausAPI
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +25,7 @@ class ListFragment : Fragment() {
         val binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
         CoroutineScope(Dispatchers.Main).launch {
-            var result = ApiDetails.hitApi(ApiDetails.URLHAUS, URLhaus::class.java)?.getUrlRecent()
+            var result = ApiDetails.hitApi(ApiDetails.URLHAUS, URLhausAPI::class.java)?.getUrlRecent()
             result?.toString()?.let { Log.d("ListFragment", it) }
 
         }

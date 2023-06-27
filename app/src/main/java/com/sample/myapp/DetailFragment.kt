@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.sample.myapp.databinding.FragmentDetailBinding
 import com.sample.myapp.remote.ApiDetails
-import com.sample.myapp.remote.OpenWhyd
+import com.sample.myapp.remote.OpenWhydAPI
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +25,7 @@ class DetailFragment : Fragment() {
 
 
         CoroutineScope(Dispatchers.Main).launch {
-            var result = ApiDetails.hitApi(ApiDetails.OPENWHYD, OpenWhyd::class.java)?.getAdrien()
+            var result = ApiDetails.hitApi(ApiDetails.OPENWHYD, OpenWhydAPI::class.java)?.getAdrien()
             Log.d("DetailFragment", result.toString())
         }
 
